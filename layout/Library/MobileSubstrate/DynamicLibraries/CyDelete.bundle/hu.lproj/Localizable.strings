@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NOT_ENOUGH_MEMORY</key>
+	<string>Nincs elég memória.</string>
+	<key>PACKAGE_DELETE_BODY</key>
+	<string>“%@” törlése a “%@” eltávolításával jár.</string>
+	<key>PACKAGE_FINISH_BODY</key>
+	<string>“%@” eltávolításának bejezéséhez, %@.</string>
+	<key>PACKAGE_FINISH_OKAY</key>
+	<string>OK</string>
+	<key>PACKAGE_FINISH_REBOOT</key>
+	<string>Újraindítás</string>
+	<key>PACKAGE_FINISH_RELOAD</key>
+	<string>SpringBoard újratöltése</string>
+	<key>PACKAGE_FINISH_RESTART</key>
+	<string>SpringBoard újraindítása</string>
+	<key>PACKAGE_FINISH_TITLE</key>
+	<string>Parancs szükséges</string>
+	<key>PACKAGE_NOT_CYDIA_BODY</key>
+	<string>“%@” nem a Cydia-n keresztül lett telepítve, a CyDelete nem tudja eltávolítani.</string>
+	<key>PACKAGE_NOT_CYDIA_TITLE</key>
+	<string>Nem a Cydia telepítette</string>
+	<key>PACKAGE_SEARCHING</key>
+	<string>Folyamatban...</string>
+	<key>PACKAGE_UNINSTALLING</key>
+	<string>Eltávolítás...</string>
+	<key>PACKAGE_UNINSTALL_ERROR_BODY</key>
+	<string>“%@” eltávolítása sikertelen.</string>
+	<key>PACKAGE_UNINSTALL_ERROR_TITLE</key>
+	<string>Hiba az eltávolításnál</string>
+</dict>
+</plist>

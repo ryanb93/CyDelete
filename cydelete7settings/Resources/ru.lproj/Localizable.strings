@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DONATE</key>
+	<string>Взнос в PayPal</string>
+	<key>NON_CYDIA_DEL</key>
+	<string>Удаление не Cydia-приложения</string>
+	<key>NON_CYDIA_DEL_TEXT</key>
+	<string>Позволяет CyDelete удалять приложения, которые установлены не из Cydia. Это может быть опасно, и приложения, удаленные таким образом, могут быть переустановлены только вручную.</string>
+	<key>PROTECTED_TITLE</key>
+	<string>Защищенные приложения</string>
+	<key>PROTECTED_WARNING</key>
+	<string>Удаление обоих этих приложений НЕ рекомендуется, так как в результате будет удален весь графический интерфейс для установленных приложений.</string>
+</dict>
+</plist>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NOT_ENOUGH_MEMORY</key>
+	<string>אין מספיק זיכרון</string>
+	<key>PACKAGE_DELETE_BODY</key>
+	<string>מחיקת “%@” יסיר את “%@”.</string>
+	<key>PACKAGE_FINISH_BODY</key>
+	<string>על מנת להשלים את ההסרה של “%@”, חובה %@.</string>
+	<key>PACKAGE_FINISH_OKAY</key>
+	<string>אישור</string>
+	<key>PACKAGE_FINISH_REBOOT</key>
+	<string>איתחול מחדש</string>
+	<key>PACKAGE_FINISH_RELOAD</key>
+	<string>טעינת SpringBoard</string>
+	<key>PACKAGE_FINISH_RESTART</key>
+	<string>איתחול SpringBoard</string>
+	<key>PACKAGE_FINISH_TITLE</key>
+	<string></string>
+	<key>PACKAGE_NOT_CYDIA_BODY</key>
+	<string>“%@” לא הותקן ע''י Cydia, לכן לא ניתן להסירו ע''י CyDelete.</string>
+	<key>PACKAGE_NOT_CYDIA_TITLE</key>
+	<string>לא הותקן ע''י Cydia</string>
+	<key>PACKAGE_SEARCHING</key>
+	<string>מעבד...</string>
+	<key>PACKAGE_UNINSTALLING</key>
+	<string>מסיר...</string>
+	<key>PACKAGE_UNINSTALL_ERROR_BODY</key>
+	<string>“%@” נכשל בהסרה.</string>
+	<key>PACKAGE_UNINSTALL_ERROR_TITLE</key>
+	<string>שגיאת הסרה</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DONATE</key>
+	<string>Spenden via PayPal</string>
+	<key>NON_CYDIA_DEL</key>
+	<string>Erweiterte Optionen</string>
+	<key>NON_CYDIA_DEL_TEXT</key>
+	<string>ACHTUNG: Gefährlich! Mit dieser Option darf man Pakete deinstallieren die nicht durch Cydia installiert worden sind. Eine manuelle installation ist notwendig um die Pakete erneut zu installieren.</string>
+	<key>PROTECTED_TITLE</key>
+	<string>Gesicherte Applikationen</string>
+	<key>PROTECTED_WARNING</key>
+	<string>Das löschen BEIDER Applikationen ist NICHT empfohlen!! Danach ist es nicht mehr möglich Pakete per GUI zu installieren.</string>
+</dict>
+</plist>

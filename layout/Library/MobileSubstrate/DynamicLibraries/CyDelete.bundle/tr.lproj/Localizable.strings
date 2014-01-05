@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NOT_ENOUGH_MEMORY</key>
+	<string>Yeterli Hafıza Yok</string>
+	<key>PACKAGE_DELETE_BODY</key>
+	<string>“%@” öğesini silmek şu öğeyi silecek “%@” </string>
+	<key>PACKAGE_FINISH_BODY</key>
+	<string>“%@” öğesinin silinmesini tamamlamak için, ''%@'' eylemini yapmalısınız.</string>
+	<key>PACKAGE_FINISH_OKAY</key>
+	<string>Tamam</string>
+	<key>PACKAGE_FINISH_REBOOT</key>
+	<string>Yeniden Başlat</string>
+	<key>PACKAGE_FINISH_RELOAD</key>
+	<string>Masaüstünü Yeniden Yükle</string>
+	<key>PACKAGE_FINISH_RESTART</key>
+	<string>Masaüstünü Yeniden Başlat</string>
+	<key>PACKAGE_FINISH_TITLE</key>
+	<string>Eylem Gerekli</string>
+	<key>PACKAGE_NOT_CYDIA_BODY</key>
+	<string>“%@” öğesi Cydia'dan yüklenmemiş. Bu mesajı gördüyseniz bu öğeyi kendiniz yüklemişsiniz demektir ve böyle öğeler CyDelete ile silinemez.</string>
+	<key>PACKAGE_NOT_CYDIA_TITLE</key>
+	<string>Öğe Cydia'dan Yüklenmemiş</string>
+	<key>PACKAGE_SEARCHING</key>
+	<string>Öğe İnceleniyor...</string>
+	<key>PACKAGE_UNINSTALLING</key>
+	<string>Siliniyor...</string>
+	<key>PACKAGE_UNINSTALL_ERROR_BODY</key>
+	<string>“%@” öğesi silinemedi.</string>
+	<key>PACKAGE_UNINSTALL_ERROR_TITLE</key>
+	<string>Silme Hatası</string>
+</dict>
+</plist>

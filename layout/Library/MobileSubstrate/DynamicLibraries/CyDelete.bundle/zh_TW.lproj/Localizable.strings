@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NOT_ENOUGH_MEMORY</key>
+	<string>記憶體不足</string>
+	<key>PACKAGE_DELETE_BODY</key>
+	<string>移除“%@”將會卸載“%@”。</string>
+	<key>PACKAGE_FINISH_BODY</key>
+	<string>為完成“%@”的卸載，您必須%@。</string>
+	<key>PACKAGE_FINISH_OKAY</key>
+	<string>確認</string>
+	<key>PACKAGE_FINISH_REBOOT</key>
+	<string>重啟</string>
+	<key>PACKAGE_FINISH_RELOAD</key>
+	<string>重新加載SpringBoard</string>
+	<key>PACKAGE_FINISH_RESTART</key>
+	<string>重新啟動SpringBoard</string>
+	<key>PACKAGE_FINISH_TITLE</key>
+	<string></string>
+	<key>PACKAGE_NOT_CYDIA_BODY</key>
+	<string>“%@”并非在Cydia中安裝，因此無法由CyDelete卸載。</string>
+	<key>PACKAGE_NOT_CYDIA_TITLE</key>
+	<string>并非在Cydia中安裝</string>
+	<key>PACKAGE_SEARCHING</key>
+	<string>執行中…</string>
+	<key>PACKAGE_UNINSTALLING</key>
+	<string>卸載中…</string>
+	<key>PACKAGE_UNINSTALL_ERROR_BODY</key>
+	<string>卸載“%@”失敗</string>
+	<key>PACKAGE_UNINSTALL_ERROR_TITLE</key>
+	<string>卸載時發生錯誤</string>
+</dict>
+</plist>

@@ -1,0 +1,10 @@
+{
+	entry = {
+		bundle = cydelete7settings;
+		cell = PSLinkCell;
+		detail = "cydelete7settingsListController";
+		icon = "CyDelete.png";
+		isController = 1;
+		label = CyDelete7;
+	};
+}

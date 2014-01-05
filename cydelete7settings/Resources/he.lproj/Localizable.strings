@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DONATE</key>
+	<string>תרומה באמצעות PayPal</string>
+	<key>NON_CYDIA_DEL</key>
+	<string>מחיקת תוכנה שאינה של Cydia</string>
+	<key>NON_CYDIA_DEL_TEXT</key>
+	<string>אפשר לתוכנה להסיר אפליקציה שלא הותקנה בעזרת Cydia. פעולה זו עשויה להיות מסוכנת, ואפליקציות שיסרו בצורה זו יוכלו להיות מתקנות אך ורק בצורה ידנית.</string>
+	<key>PROTECTED_TITLE</key>
+	<string>אפליקציות מוגנות</string>
+	<key>PROTECTED_WARNING</key>
+	<string>מחיקת שתי האפליקציות ישאירו אותך ללא ממשק גרפי להתקנות, פעולה זו אינה מומלצת!</string>
+</dict>
+</plist>

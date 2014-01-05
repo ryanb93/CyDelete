@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NOT_ENOUGH_MEMORY</key>
+	<string>Pas assez de mémoire</string>
+	<key>PACKAGE_DELETE_BODY</key>
+	<string>Supprimer “%@” le supprimera définitivement.</string>
+	<key>PACKAGE_FINISH_BODY</key>
+	<string>Pour finir la désinstallation de l'application “%@”, veuillez %@.</string>
+	<key>PACKAGE_FINISH_OKAY</key>
+	<string>Fini</string>
+	<key>PACKAGE_FINISH_REBOOT</key>
+	<string>Redémarrage</string>
+	<key>PACKAGE_FINISH_RELOAD</key>
+	<string>Chargement du SpringBoard</string>
+	<key>PACKAGE_FINISH_RESTART</key>
+	<string>Redémarrer le SpringBoard</string>
+	<key>PACKAGE_FINISH_TITLE</key>
+	<string></string>
+	<key>PACKAGE_NOT_CYDIA_BODY</key>
+	<string>L'application “%@” n'a pas été installée via Cydia et ne peut donc pas être supprimée par Cydelete.</string>
+	<key>PACKAGE_NOT_CYDIA_TITLE</key>
+	<string>Non installé avec Cydia</string>
+	<key>PACKAGE_SEARCHING</key>
+	<string>Chargement...</string>
+	<key>PACKAGE_UNINSTALLING</key>
+	<string>Désinstallation...</string>
+	<key>PACKAGE_UNINSTALL_ERROR_BODY</key>
+	<string>“%@” n'a pas été désinstallé.</string>
+	<key>PACKAGE_UNINSTALL_ERROR_TITLE</key>
+	<string>Erreur durant la désinstallation</string>
+</dict>
+</plist>

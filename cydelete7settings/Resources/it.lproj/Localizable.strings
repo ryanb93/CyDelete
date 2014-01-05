@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DONATE</key>
+	<string>Dona con PayPal</string>
+	<key>NON_CYDIA_DEL</key>
+	<string>Eliminazione Extra</string>
+	<key>NON_CYDIA_DEL_TEXT</key>
+	<string>Permette a CyDelete di eliminare le applicazioni che non sono state installate tramite Cydia. Questo procedimento può causare danni e le applicazioni eliminate in questo modo potranno essere reinstallate soltanto tramite SSH.</string>
+	<key>PROTECTED_TITLE</key>
+	<string>Applicazioni Protette</string>
+	<key>PROTECTED_WARNING</key>
+	<string>Cancellando queste applicazioni resterai senza interfaccia grafica durante l'installazione dei packages, quindi ti consigliamo di NON farlo.</string>
+</dict>
+</plist>
