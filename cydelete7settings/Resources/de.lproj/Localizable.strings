@@ -11,6 +11,6 @@
 	<key>PROTECTED_TITLE</key>
 	<string>Gesicherte Applikationen</string>
 	<key>PROTECTED_WARNING</key>
-	<string>Das löschen BEIDER Applikationen ist NICHT empfohlen!! Danach ist es nicht mehr möglich Pakete per GUI zu installieren.</string>
+	<string>Das löschen aller dieser Applikationen ist NICHT empfohlen!! Danach ist es nicht mehr möglich Pakete über eine Grafische Benutzeroberfläche zu installieren.</string>
 </dict>
 </plist>
