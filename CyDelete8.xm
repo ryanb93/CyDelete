@@ -44,7 +44,7 @@ static NSOperationQueue *uninstallQueue;
 
 //Loads the application translation bundle and stores it locally. 
 static void initTranslation() {
-    cyDelBundle = [NSBundle bundleWithPath:@"/Library/MobileSubstrate/DynamicLibraries/CyDelete8.bundle"];
+    cyDelBundle = [NSBundle bundleWithPath:@"/Library/Application Support/CyDelete8/CyDelete8.bundle"];
 }
 
 static bool getCFBool(CFStringRef key, bool defaultValue) {
