@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>items</key>
+	<array>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
+			<string>PROTECTED_TITLE</string>
+			<key>footerText</key>
+			<string>PROTECTED_WARNING</string>
+		</dict>
+		<dict>
+			<key>alternateColors</key>
+			<true/>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.ryanburke.cydelete8</string>
+			<key>key</key>
+			<string>CDProtectCydia</string>
+			<key>label</key>
+			<string>Cydia</string>
+			<key>icon</key>
+			<string>Cydia.png</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>CyDelete8 © 2014 Ryan Burke
+					CyDelete © 2009-2011 Dustin L. Howett
+					Released under the GPLv3 Licence.
+			</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>ryanDonate:</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Support</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>viewSource:</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>Source Code</string>
+		</dict>
+	</array>
+	<key>title</key>
+	<string>CyDelete8</string>
+</dict>
+</plist>

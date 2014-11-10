@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DONATE</key>
+	<string>Adományozz PayPal-en keresztül</string>
+	<key>NON_CYDIA_DEL</key>
+	<string>Nem Cydia alkalmazás törlése</string>
+	<key>NON_CYDIA_DEL_TEXT</key>
+	<string>Megengedi a CyDelete számára a Cydia-n kívüli alkalmazások törlését. Ez veszélyes lehet, és az alkalmazások ilyen módú eltávolítása után az újratelepítés csak manuálisan lehetséges.</string>
+	<key>PROTECTED_TITLE</key>
+	<string>Védett alkalmazások</string>
+	<key>PROTECTED_WARNING</key>
+	<string>Ezen alkalmazások törlésénél elhagyod a telepítõ grafikus felhasználói felületét. Ez a funkció NEM ajánlott.</string>
+</dict>
+</plist>

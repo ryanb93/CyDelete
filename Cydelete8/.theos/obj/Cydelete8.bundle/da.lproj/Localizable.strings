@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DONATE</key>
+	<string>Donere via PayPal</string>
+	<key>NON_CYDIA_DEL</key>
+	<string>Ikke-Cydia sletning</string>
+	<key>NON_CYDIA_DEL_TEXT</key>
+	<string>Tillad CyDelete at slette programmer der ikke var installeret med Cydia. Dette can være farligt og programmer afinstalleret på denne måde kan kun geninstallers manuelt.</string>
+	<key>PROTECTED_TITLE</key>
+	<string>Beskyttet program</string>
+	<key>PROTECTED_WARNING</key>
+	<string>Sletning af begge disse programmer wil efterlade dig uden et grafisk interface to at installer pakker, dette kan ikke anbefales.</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DONATE</key>
+	<string>PayPal ile Bağış Yap</string>
+	<key>NON_CYDIA_DEL</key>
+	<string>Cydia'dan Olmayan Silme</string>
+	<key>NON_CYDIA_DEL_TEXT</key>
+	<string>Bu CyDelete'in Cydia'dan yüklenmemiş öğelerin silmesine izin verir. Bu şeklide silmek tehlikeli olabilir ve silinen öğenin sadece manuel olarak yüklenebilmesine yol açabilir.</string>
+	<key>PROTECTED_TITLE</key>
+	<string>Korunan Öğe</string>
+	<key>PROTECTED_WARNING</key>
+	<string>Bu iki öğenin silinmesi sizi uygulama yüklemek için grafik arayüzünden mahrum bırakır, ve kesinlikle ÖNERİLMEZ.</string>
+</dict>
+</plist>

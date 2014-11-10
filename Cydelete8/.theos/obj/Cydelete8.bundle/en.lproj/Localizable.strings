@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DONATE</key>
+	<string>Donate via PayPal</string>
+	<key>NON_CYDIA_DEL</key>
+	<string>Non-Cydia Deletion</string>
+	<key>NON_CYDIA_DEL_TEXT</key>
+	<string>Allows CyDelete to delete Applications that were not installed with Cydia. This can be dangerous, and applications uninstalled in this way can only be reinstalled manually.</string>
+	<key>PROTECTED_TITLE</key>
+	<string>Protected Applications</string>
+	<key>PROTECTED_WARNING</key>
+	<string>Deleting all of these applications will leave you without a Graphical Interface for installing packages, and is NOT recommended.</string>
+</dict>
+</plist>

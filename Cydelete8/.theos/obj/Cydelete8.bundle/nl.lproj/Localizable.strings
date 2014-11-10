@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DONATE</key>
+	<string>Doneer met Paypal</string>
+	<key>NON_CYDIA_DEL</key>
+	<string>Verwijdering zonder Cydia</string>
+	<key>NON_CYDIA_DEL_TEXT</key>
+	<string>Geeft CyDelete toestemming om applicaties die niet door Cydia geïnstalleerd zijn te verwijderen. Dit kan gevaarlijk zijn en applicaties op deze manier zijn gedeïnstalleerd kunnen alleen handmatig worden geherinstalleerd.</string>
+	<key>PROTECTED_TITLE</key>
+	<string>Beveiligde applicaties</string>
+	<key>PROTECTED_WARNING</key>
+	<string>Het verwijderen van allebij deze applicaties zorgt ervoor dat je geen grafische interface meer hebt om pakketten te installeren en is NIET aan te raden.</string>
+</dict>
+</plist>

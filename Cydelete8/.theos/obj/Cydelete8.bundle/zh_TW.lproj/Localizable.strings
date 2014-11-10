@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>DONATE</key>
+	<string>通過PayPal捐助</string>
+	<key>NON_CYDIA_DEL</key>
+	<string>非Cydia卸載</string>
+	<key>NON_CYDIA_DEL_TEXT</key>
+	<string>允許CyDelete卸載不是在Cydia中安裝的應用程式。此操作有一定的危險性，并且以這種方式卸載的應用程式只能手動重新安裝。</string>
+	<key>PROTECTED_TITLE</key>
+	<string>受保護的程式</string>
+	<key>PROTECTED_WARNING</key>
+	<string>卸載這兩個應用程式會導致安裝軟體時無圖形界面，因此不推薦這樣做。</string>
+</dict>
+</plist>

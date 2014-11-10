@@ -1,0 +1,10 @@
+{
+	entry = {
+		bundle = Cydelete8;
+		cell = PSLinkCell;
+		detail = "Cydelete8ListController";
+		icon = "CyDelete.png";
+		isController = 1;
+		label = CyDelete8;
+	};
+}
