@@ -250,9 +250,20 @@ static void removeBundleFromMIList(NSString *bundle) {
 
 	// We still don't have an entry (or a NSNull). We should probably bail out.
 	if(!package) return;
-	
-	[uninstallQueue addOperation:[[CDUninstallDpkgOperation alloc] initWithPackage:package]];
 
+	if(package == [NSNull null]) {
+		NSString *nonCydiaText = [NSString stringWithFormat:CDLocalizedString(@"PACKAGE_NOT_CYDIA_BODY"), package];
+		UIAlertView *nonCydiaAlert = [[UIAlertView alloc] initWithTitle:CDLocalizedString(@"PACKAGE_NOT_CYDIA_TITLE") 
+													message:nonCydiaText 
+													delegate:nil 
+													cancelButtonTitle:@"Okay" 
+													otherButtonTitles:nil];
+		[nonCydiaAlert show];
+		return;
+	}
+	else {
+		[uninstallQueue addOperation:[[CDUninstallDpkgOperation alloc] initWithPackage:package]];
+	}
 }
 %end
 
