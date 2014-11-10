@@ -8,6 +8,24 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
+			<string>Settings</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.ryanburke.cydelete8</string>
+			<key>key</key>
+			<string>enabled</string>
+			<key>label</key>
+			<string>Enable</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>label</key>
 			<string>PROTECTED_TITLE</string>
 			<key>footerText</key>
 			<string>PROTECTED_WARNING</string>
@@ -30,11 +48,26 @@
 		</dict>
 		<dict>
 			<key>cell</key>
+			<string>PSSwitchCell</string>
+			<key>default</key>
+			<true/>
+			<key>defaults</key>
+			<string>com.ryanburke.cydelete8</string>
+			<key>key</key>
+			<string>CDProtectPangu</string>
+			<key>label</key>
+			<string>Pangu</string>
+			<key>icon</key>
+			<string>Pangu.png</string>
+		</dict>
+		<dict>
+			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>CyDelete8 © 2014 Ryan Burke
-					CyDelete © 2009-2011 Dustin L. Howett
-					Released under the GPLv3 Licence.
+			<string>
+CyDelete8 © 2014 Ryan Burke
+CyDelete © 2009-2011 Dustin L. Howett
+Released under the GPLv3 Licence.
 			</string>
 		</dict>
 		<dict>
@@ -43,7 +76,7 @@
 			<key>cell</key>
 			<string>PSButtonCell</string>
 			<key>label</key>
-			<string>Support</string>
+			<string>DONATE</string>
 		</dict>
 		<dict>
 			<key>action</key>

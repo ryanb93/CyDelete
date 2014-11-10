@@ -47,23 +47,36 @@ static void initTranslation() {
     cyDelBundle = [NSBundle bundleWithPath:@"/Library/MobileSubstrate/DynamicLibraries/CyDelete8.bundle"];
 }
 
-static bool getProtectCydia() {
+static bool getCFBool(CFStringRef key, bool defaultValue) {
 	//Sync the latest version of the preferences.
 	bool synced = CFPreferencesAppSynchronize(CFSTR("com.ryanburke.cydelete8"));
 	//If the sync failed, lets just default to protecting Cydia for safety.
-	if(!synced) return true;
+	if(!synced) return defaultValue;
 	//Create a boolean object to hold the success value from next function.
 	Boolean success;
-	//Get the value of the "CDProtectCydia" key from the preferences.
-	bool result = CFPreferencesGetAppBooleanValue(CFSTR("CDProtectCydia"), CFSTR("com.ryanburke.cydelete8"), &success);
+	//Get the value of the key from the preferences.
+	bool result = CFPreferencesGetAppBooleanValue(key, CFSTR("com.ryanburke.cydelete8"), &success);
 	//If the enabled key existed and we got the value okay.
 	if(success) {
 		//Return the value of the key.
 		return result;
 	}
 	//If for some reason we couldn't get the value lets just default to protecting Cydia for safety.
-	return true;
+	return defaultValue;
 }
+
+static bool getProtectCydia() {
+	return getCFBool(CFSTR("CDProtectCydia"), true);
+}
+
+static bool getProtectPangu() {
+	return getCFBool(CFSTR("CDProtectPangu"), true);
+}
+
+static bool getEnabled() {
+	return getCFBool(CFSTR("enabled"), true);
+}
+
 
 // Thanks _BigBoss_!
 __attribute__((unused)) static int getFreeMemory() {
@@ -313,8 +326,10 @@ static void uninstallClickedForIcon(SBIcon *self) {
 		bool isApple = ([bundle hasPrefix:@"com.apple."] && ![bundle hasPrefix:@"com.apple.samplecode."]);
 		//If the application is Cydia and user has protected it.
 		bool isCydia = ([bundle isEqualToString:@"com.saurik.Cydia"] && getProtectCydia());
+		//If the application is Cydia and user has protected it.
+		bool isPangu = ([bundle isEqualToString:@"io.pangu.loader"] && getProtectPangu());
 		//If any of these match then we don't want to allow uninstall.
-		if(isApple || isCydia || getFreeMemory() < 20 ) {
+		if(isApple || isCydia || isPangu || !getEnabled() || getFreeMemory() < 20 ) {
 			return NO;
 		}
 		return YES;
