@@ -38,11 +38,11 @@ static NSOperationQueue *uninstallQueue;
 @interface CDUninstallDpkgOperation : CDUninstallOperation {
 	NSString *_package;
 }
-
 @property (nonatomic, retain) NSString *package;
 - (id)initWithPackage:(NSString *)package;
 @end
 
+//Loads the application translation bundle and stores it locally. 
 static void initTranslation() {
     cyDelBundle = [NSBundle bundleWithPath:@"/Library/MobileSubstrate/DynamicLibraries/CyDelete8.bundle"];
 }
@@ -77,6 +77,7 @@ __attribute__((unused)) static int getFreeMemory() {
 }
 
 #define fexists(n) access(n, F_OK)
+
 static char *owner(const char *_bundle, const char *_title, const char *_path) {
 	char bundle[1024], title[1024];
 	static char pkgname[256];
@@ -238,31 +239,32 @@ static void removeBundleFromMIList(NSString *bundle) {
 %hook SBApplicationController
 
 -(void)uninstallApplication:(SBApplication *)application {
+	//If the application is not a system app or web app.
 	if(![application isSystemApplication] || [[application path] isEqualToString:@"/Applications/Web.app"]) {
 		%orig;
-		return;
-	}
-
-	id package = [iconPackagesDict objectForKey:[application bundleIdentifier]];
-	
-	// We were called with an application that doesn't have an entry in the packages list.
-	if(!package) package = ownerForSBApplication(application);
-
-	// We still don't have an entry (or a NSNull). We should probably bail out.
-	if(!package) return;
-
-	if(package == [NSNull null]) {
-		NSString *nonCydiaText = [NSString stringWithFormat:CDLocalizedString(@"PACKAGE_NOT_CYDIA_BODY"), package];
-		UIAlertView *nonCydiaAlert = [[UIAlertView alloc] initWithTitle:CDLocalizedString(@"PACKAGE_NOT_CYDIA_TITLE") 
-													message:nonCydiaText 
-													delegate:nil 
-													cancelButtonTitle:@"Okay" 
-													otherButtonTitles:nil];
-		[nonCydiaAlert show];
-		return;
 	}
 	else {
-		[uninstallQueue addOperation:[[CDUninstallDpkgOperation alloc] initWithPackage:package]];
+		//Get the package details for the bundle ID.
+		id package = [iconPackagesDict objectForKey:[application bundleIdentifier]];
+		// We were called with an application that doesn't have an entry in the packages list.
+		if(!package) package = ownerForSBApplication(application);
+		// We still don't have an entry (or a NSNull). We should probably bail out.
+		if(!package) return;
+		//If the package equals null then we can assume it is not installed via Cydia.
+		if(package == [NSNull null]) {
+			//Show the user an error message warning them that we didn't remove the application.
+			NSString *nonCydiaText = [NSString stringWithFormat:CDLocalizedString(@"PACKAGE_NOT_CYDIA_BODY"), package];
+			UIAlertView *nonCydiaAlert = [[UIAlertView alloc] initWithTitle:CDLocalizedString(@"PACKAGE_NOT_CYDIA_TITLE") 
+														message:nonCydiaText 
+														delegate:nil 
+														cancelButtonTitle:@"Okay" 
+														otherButtonTitles:nil];
+			[nonCydiaAlert show];
+		}
+		else {
+			//Add the package to the Uninstall operation queue.
+			[uninstallQueue addOperation:[[CDUninstallDpkgOperation alloc] initWithPackage:package]];
+		}
 	}
 }
 %end
@@ -273,11 +275,18 @@ static void removeBundleFromMIList(NSString *bundle) {
 @end
 
 static void uninstallClickedForIcon(SBIcon *self) {
-	if(![[iconPackagesDict allKeys] containsObject:[[self application] bundleIdentifier]]) {
-		SBApplication *app = [self application];
-		id _pkgName = ownerForSBApplication(app);
+
+	//Get the application for this icon.
+	SBApplication *app = [self application];
+	//Get the bundle identifer for this application.
+	NSString *bundle = [app bundleIdentifier];
+
+	//If iconPackagesDict does not contain this current application's bundle ID.
+	if(![[iconPackagesDict allKeys] containsObject:bundle]) {
+		//Get the owner of the application.
+		id pkgName = ownerForSBApplication(app);
 		//At this point, an app store app would be pkgname null.
-		[iconPackagesDict setObject:_pkgName forKey:[[self application] bundleIdentifier]];
+		[iconPackagesDict setObject:pkgName forKey:bundle];
 	}
 }
 
@@ -298,15 +307,16 @@ static void uninstallClickedForIcon(SBIcon *self) {
 
 	%new(c@:)
 	-(BOOL)cydelete_allowsUninstall {
-
+		//Get the bundle ID for this application.
 		NSString *bundle = [[self application] bundleIdentifier];
+		//If the application is an Apple application.
 		bool isApple = ([bundle hasPrefix:@"com.apple."] && ![bundle hasPrefix:@"com.apple.samplecode."]);
+		//If the application is Cydia and user has protected it.
 		bool isCydia = ([bundle isEqualToString:@"com.saurik.Cydia"] && getProtectCydia());
-
+		//If any of these match then we don't want to allow uninstall.
 		if(isApple || isCydia || getFreeMemory() < 20 ) {
 			return NO;
 		}
-		
 		return YES;
 	}
 
