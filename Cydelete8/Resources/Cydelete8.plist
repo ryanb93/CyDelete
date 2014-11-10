@@ -20,7 +20,7 @@
 			<key>key</key>
 			<string>enabled</string>
 			<key>label</key>
-			<string>Enable</string>
+			<string>Enabled</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -65,6 +65,8 @@
 			<string>PSGroupCell</string>
 			<key>footerText</key>
 			<string>
+There is no DRM protection on this application but please help support future development (my coffee fund) by purchasing through the Cydia store. Alternatively download the source code and build it yourself!
+
 CyDelete8 © 2014 Ryan Burke
 CyDelete © 2009-2011 Dustin L. Howett
 Released under the GPLv3 Licence.
