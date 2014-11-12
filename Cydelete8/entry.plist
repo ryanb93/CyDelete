@@ -5,6 +5,6 @@
 		detail = "Cydelete8ListController";
 		icon = "CyDelete.png";
 		isController = 1;
-		label = "CyDelete8 Community";
+		label = CyDelete8;
 	};
 }
