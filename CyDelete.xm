@@ -39,7 +39,7 @@ static NSOperationQueue *uninstallQueue;
 }
 @end
 
-@interface CDUninstallDpkgOperation : CDUninstallOperation {
+@interface CDUninstallDpkgOperation : CDUninstallOperation<UIAlertViewDelegate> {
 	NSString *_package;
 }
 @property (nonatomic, retain) NSString *package;
@@ -222,11 +222,28 @@ static id ownerForSBApplication(SBApplication *application) {
 		[delView show];
 	}
 
+	-(void)displayRespring {
+		NSString *body = [NSString stringWithFormat:CDLocalizedString(@"PACKAGE_FINISH_BODY"), _package, @"respring"];
+		UIAlertView *respring = [[UIAlertView alloc] initWithTitle:CDLocalizedString(@"PACKAGE_FINISH_RESTART") message:body delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:nil];
+		respring.tag = 100;
+		[respring show];
+	}
+
 	- (void)main {
 		NSString *command = [NSString stringWithFormat:@"/usr/libexec/cydelete/setuid /usr/libexec/cydelete/uninstall_dpkg.sh %@", _package];
 		NSString *output = outputForShellCommand(command);
 		if(!output) [self performSelectorOnMainThread:@selector(displayError) withObject:nil waitUntilDone:NO];
 		[self completeOperation];
+		//Horrible code - need a way to detect if an application needs a respring after uninstall. ("apt-cache depends pkgname" contains mobilesubstrate?)
+		if([_package isEqualToString:@"libactivator"]) {
+			[self performSelectorOnMainThread:@selector(displayRespring) withObject:nil waitUntilDone:NO];
+		}
+	}
+
+	-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+	    if (alertView.tag == 100) {
+	    	outputForShellCommand(@"killall -9 SpringBoard");
+	    }
 	}
 
 @end
