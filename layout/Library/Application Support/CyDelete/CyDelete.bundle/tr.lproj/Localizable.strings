@@ -7,7 +7,7 @@
 	<key>PACKAGE_DELETE_BODY</key>
 	<string>“%@” öğesini silmek şu öğeyi silecek “%@” </string>
 	<key>PACKAGE_FINISH_BODY</key>
-	<string>“%@” öğesinin silinmesini tamamlamak için, ''%@'' eylemini yapmalısınız.</string>
+	<string>“%@” öğesinin silinmesini tamamlamak için, ''%@'' eylemini yapmalısınız ve tüm bağımlılıkları.</string>
 	<key>PACKAGE_FINISH_OKAY</key>
 	<string>Tamam</string>
 	<key>PACKAGE_FINISH_REBOOT</key>

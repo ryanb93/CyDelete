@@ -7,7 +7,7 @@
 	<key>PACKAGE_DELETE_BODY</key>
 	<string>מחיקת “%@” יסיר את “%@”.</string>
 	<key>PACKAGE_FINISH_BODY</key>
-	<string>על מנת להשלים את ההסרה של “%@”, חובה %@.</string>
+	<string>על מנת להשלים את ההסרה של “%@”, חובה %@ וכל התלות שלה.</string>
 	<key>PACKAGE_FINISH_OKAY</key>
 	<string>אישור</string>
 	<key>PACKAGE_FINISH_REBOOT</key>

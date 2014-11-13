@@ -7,7 +7,7 @@
 	<key>PACKAGE_DELETE_BODY</key>
 	<string>Supprimer “%@” le supprimera définitivement.</string>
 	<key>PACKAGE_FINISH_BODY</key>
-	<string>Pour finir la désinstallation de l'application “%@”, veuillez %@.</string>
+	<string>Pour finir la désinstallation de l'application “%@”, veuillez %@ et toutes ses dépendances.</string>
 	<key>PACKAGE_FINISH_OKAY</key>
 	<string>Fini</string>
 	<key>PACKAGE_FINISH_REBOOT</key>

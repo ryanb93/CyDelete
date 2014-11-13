@@ -7,7 +7,7 @@
 	<key>PACKAGE_DELETE_BODY</key>
 	<string>Het verwijderen van “%@” zal “%@” deïnstalleren.</string>
 	<key>PACKAGE_FINISH_BODY</key>
-	<string>Om de deïnstallatie van “%@” af te ronden, moet je %@.</string>
+	<string>Om de deïnstallatie van “%@” af te ronden, moet je %@ en al zijn afhankelijkheden.</string>
 	<key>PACKAGE_FINISH_OKAY</key>
 	<string>OK</string>
 	<key>PACKAGE_FINISH_REBOOT</key>

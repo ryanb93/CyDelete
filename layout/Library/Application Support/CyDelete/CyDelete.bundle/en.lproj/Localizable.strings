@@ -5,7 +5,7 @@
 	<key>NOT_ENOUGH_MEMORY</key>
 	<string>Not Enough Memory</string>
 	<key>PACKAGE_DELETE_BODY</key>
-	<string>Deleting “%@” will uninstall “%@”.</string>
+	<string>Deleting “%@” will uninstall “%@” and all its dependencies.</string>
 	<key>PACKAGE_FINISH_BODY</key>
 	<string>To complete the uninstall of “%@”, you must %@.</string>
 	<key>PACKAGE_FINISH_OKAY</key>

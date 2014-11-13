@@ -7,7 +7,7 @@
 	<key>PACKAGE_DELETE_BODY</key>
 	<string>Удаление “%@” удалит также “%@”.</string>
 	<key>PACKAGE_FINISH_BODY</key>
-	<string>Для завершения удаления “%@”, потребуется %@.</string>
+	<string>Для завершения удаления “%@”, потребуется %@ и все его зависимости.</string>
 	<key>PACKAGE_FINISH_OKAY</key>
 	<string>OK</string>
 	<key>PACKAGE_FINISH_REBOOT</key>

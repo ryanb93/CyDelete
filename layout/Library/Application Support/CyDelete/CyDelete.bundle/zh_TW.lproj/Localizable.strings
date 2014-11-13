@@ -7,7 +7,7 @@
 	<key>PACKAGE_DELETE_BODY</key>
 	<string>移除“%@”將會卸載“%@”。</string>
 	<key>PACKAGE_FINISH_BODY</key>
-	<string>為完成“%@”的卸載，您必須%@。</string>
+	<string>為完成“%@”的卸載，您必須%@ 和所有它的依賴。</string>
 	<key>PACKAGE_FINISH_OKAY</key>
 	<string>確認</string>
 	<key>PACKAGE_FINISH_REBOOT</key>

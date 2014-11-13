@@ -7,7 +7,7 @@
 	<key>PACKAGE_DELETE_BODY</key>
 	<string>Eliminando “%@” disinstallerai “%@”.</string>
 	<key>PACKAGE_FINISH_BODY</key>
-	<string>Per completare la disinstallazione di “%@”, devi %@.</string>
+	<string>Per completare la disinstallazione di “%@”, devi %@ e tutte le sue dipendenze.</string>
 	<key>PACKAGE_FINISH_OKAY</key>
 	<string>OK</string>
 	<key>PACKAGE_FINISH_REBOOT</key>

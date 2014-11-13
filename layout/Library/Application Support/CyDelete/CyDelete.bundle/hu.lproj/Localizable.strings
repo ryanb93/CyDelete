@@ -7,7 +7,7 @@
 	<key>PACKAGE_DELETE_BODY</key>
 	<string>“%@” törlése a “%@” eltávolításával jár.</string>
 	<key>PACKAGE_FINISH_BODY</key>
-	<string>“%@” eltávolításának bejezéséhez, %@.</string>
+	<string>“%@” eltávolításának bejezéséhez, %@ és minden függőséget.</string>
 	<key>PACKAGE_FINISH_OKAY</key>
 	<string>OK</string>
 	<key>PACKAGE_FINISH_REBOOT</key>
