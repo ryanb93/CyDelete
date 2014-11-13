@@ -254,7 +254,7 @@ static void removeBundleFromMIList(NSString *bundle) {
 			package = [iconPackagesDict objectForKey:[application bundleIdentifier]];
 		}
 		else {
-			package = [iconPackagesDict objectForKey:[application displayIdentifer]];
+			package = [iconPackagesDict objectForKey:[application displayName]];
 		}
 
 		// We were called with an application that doesn't have an entry in the packages list.
@@ -296,7 +296,7 @@ static void uninstallClickedForIcon(SBIcon *self) {
 		bundle = [app bundleIdentifier];
 	}
 	else {
-		bundle = [app displayIdentifer];
+		bundle = [app displayName];
 	}
 
 	//If iconPackagesDict does not contain this current application's bundle ID.
@@ -332,7 +332,7 @@ static void uninstallClickedForIcon(SBIcon *self) {
 			bundle = [[self application] bundleIdentifier];
 		}
 		else {
-			bundle = [[self application] displayIdentifer];
+			bundle = [[self application] displayName];
 		}
 		//If the application is an Apple application.
 		bool isApple = ([bundle hasPrefix:@"com.apple."] && ![bundle hasPrefix:@"com.apple.samplecode."]);
@@ -392,7 +392,7 @@ static void uninstallClickedForIcon(SBIcon *self) {
 			bundle = [[self application] bundleIdentifier];
 		}
 		else {
-			bundle = [[self application] displayIdentifer];
+			bundle = [[self application] displayName];
 		}
 
 		id package = [iconPackagesDict objectForKey:bundle];	
