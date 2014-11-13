@@ -348,21 +348,21 @@ static void uninstallClickedForIcon(SBIcon *self) {
 	}
 
 	-(BOOL)allowsCloseBox {
-		if([self class] != %c(SBApplicationIcon)) {
+		if([self class] != %c(SBApplicationIcon) && [self class] != %c(SBActivatorIcon)) {
 			return %orig;
 		}
 		return [self cydelete_allowsUninstall];
 	}
 
 	-(BOOL)allowsUninstall {
-		if([self class] != %c(SBApplicationIcon)) {
+		if([self class] != %c(SBApplicationIcon) && [self class] != %c(SBActivatorIcon)) {
 			return %orig;
 		}
 		return [self cydelete_allowsUninstall];
 	}
 
 	-(void)closeBoxClicked:(id)event {
-		if([self class] != %c(SBApplicationIcon)) {
+		if([self class] != %c(SBApplicationIcon) && [self class] != %c(SBActivatorIcon)) {
 			%orig;
 			return;
 		}
@@ -371,7 +371,7 @@ static void uninstallClickedForIcon(SBIcon *self) {
 	}
 
 	-(void)uninstallClicked:(id)event {
-		if([self class] != %c(SBApplicationIcon)) {
+		if([self class] != %c(SBApplicationIcon) && [self class] != %c(SBActivatorIcon)) {
 			%orig;
 			return;
 		}
