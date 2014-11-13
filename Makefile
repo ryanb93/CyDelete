@@ -8,7 +8,7 @@ CyDelete8_FILES = CyDelete8.xm
 CyDelete8_FRAMEWORKS = Foundation, UIKit
 
 include $(THEOS_MAKE_PATH)/tweak.mk
-SUBPROJECTS += setuid Cydelete8
+SUBPROJECTS += setuid CyDelete8
 include $(THEOS_MAKE_PATH)/aggregate.mk
 
 after-install::

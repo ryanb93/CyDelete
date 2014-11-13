@@ -3,8 +3,6 @@
 
 int main(int argc, char **argv) {
     setuid(0);
-    char *params[] = {argv[0], argv[1], NULL};
-	char *env[] = {NULL};
-	execve(argv[0], params, env);
+	execve(argv[1], (argc > 1) ? argv+1 : 0, 0);
 	return 0;
 }

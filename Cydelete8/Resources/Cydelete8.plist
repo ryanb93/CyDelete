@@ -65,7 +65,7 @@
 			<string>PSGroupCell</string>
 			<key>footerText</key>
 			<string>
-There is no DRM protection on this application but please help support future development (my coffee fund) by purchasing through the Cydia store or donating via PayPal.
+There is no DRM protection on this application but please help support future development (my coffee fund) by donating via PayPal.
 
 CyDelete8 © 2014 Ryan Burke
 CyDelete © 2009-2011 Dustin L. Howett
@@ -90,6 +90,6 @@ Released under the GPLv3 Licence.
 		</dict>
 	</array>
 	<key>title</key>
-	<string>CyDelete8 Community</string>
+	<string>CyDelete8</string>
 </dict>
 </plist>

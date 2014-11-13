@@ -29,6 +29,10 @@ static NSOperationQueue *uninstallQueue;
 #define SBLocalizedString(key) [[NSBundle mainBundle] localizedStringForKey:key value:@"None" table:@"SpringBoard"]
 #define CDLocalizedString(key) [cyDelBundle localizedStringForKey:key value:key table:nil]
 
+#ifndef kCFCoreFoundationVersionNumber_iOS_8_0
+#define kCFCoreFoundationVersionNumber_iOS_8_0 1129.15
+#endif
+
 @interface CDUninstallOperation : NSOperation {
 	BOOL _executing;
 	BOOL _finished;
@@ -88,6 +92,27 @@ __attribute__((unused)) static int getFreeMemory() {
 	int availMem = vmStats.free_count + vmStats.inactive_count;
 	return (availMem * pageSize) / 1024 / 1024;
 }
+
+__attribute__((unused)) static NSMutableString *outputForShellCommand(NSString *cmd) {
+	FILE *fp;
+	char buf[1024];
+	NSMutableString* finalRet;
+
+	fp = popen([cmd UTF8String], "r");
+	if (fp == NULL) {
+		return nil;
+	}
+
+	fgets(buf, 1024, fp);
+	finalRet = [NSMutableString stringWithUTF8String:buf];
+
+	if(pclose(fp) != 0) {
+		return nil;
+	}
+
+	return finalRet;
+}
+
 
 #define fexists(n) access(n, F_OK)
 
@@ -191,37 +216,6 @@ static id ownerForSBApplication(SBApplication *application) {
 		return self;
 	}
 
-	- (bool)runCMD
-	{
-		//Path to the setuid appliaction that gets us root permissions.
-	    const char *setuid = "/usr/libexec/cydelete/setuid";
-	    //Path to our uninstall script that we want to run as root.
-		char commandChar[] = "/usr/libexec/cydelete/uninstall_dpkg.sh";
-
-		//Horrible method to convert NSString to Char array.
-		char packageChar [strlen([_package UTF8String]) + 1];
-		strcpy(packageChar, [_package UTF8String]);
-
-		//Char literal array containing shell script path and package name.
-	    char *argv[] = {commandChar, packageChar, NULL};
-
-	    //Create a pid_t object to hold reference to spawned process.
-	    pid_t pid;
-
-	    //Spawn a new process using posix_spawn as System() is depricated on iOS 8.
-	    int status = posix_spawn(&pid, setuid, NULL, NULL, argv, NULL);
-
-	    //Status 0 indicates successful spawn. Not that apt-get was success though.
-	    if (status == 0) {
-	        if (waitpid(pid, &status, 0) != -1) {
-	        	//Return a success.
-	            return true;
-	        }
-	    }
-	    //Return failure.
-	    return false;
-	}
-
 	- (void)displayError {
 		NSString *body = [NSString stringWithFormat:CDLocalizedString(@"PACKAGE_UNINSTALL_ERROR_BODY"), _package];
 		UIAlertView *delView = [[UIAlertView alloc] initWithTitle:CDLocalizedString(@"PACKAGE_UNINSTALL_ERROR_TITLE") message:body delegate:nil cancelButtonTitle:@"Okay" otherButtonTitles:nil];
@@ -229,14 +223,9 @@ static id ownerForSBApplication(SBApplication *application) {
 	}
 
 	- (void)main {
-		bool output = [self runCMD];
-		if(output) {
-			removeBundleFromMIList(_package);
-		} 
-		else {
-			[self performSelectorOnMainThread:@selector(displayError) withObject:nil waitUntilDone:NO];
-		}
-
+		NSString *command = [NSString stringWithFormat:@"/usr/libexec/cydelete/setuid /usr/libexec/cydelete/uninstall_dpkg.sh %@", _package];
+		NSString *output = outputForShellCommand(command);
+		if(!output) [self performSelectorOnMainThread:@selector(displayError) withObject:nil waitUntilDone:NO];
 		[self completeOperation];
 	}
 
@@ -257,8 +246,17 @@ static void removeBundleFromMIList(NSString *bundle) {
 		%orig;
 	}
 	else {
+
 		//Get the package details for the bundle ID.
-		id package = [iconPackagesDict objectForKey:[application bundleIdentifier]];
+		id package = nil;
+
+		if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_8_0) {
+			package = [iconPackagesDict objectForKey:[application bundleIdentifier]];
+		}
+		else {
+			package = [iconPackagesDict objectForKey:[application displayIdentifer]];
+		}
+
 		// We were called with an application that doesn't have an entry in the packages list.
 		if(!package) package = ownerForSBApplication(application);
 		// We still don't have an entry (or a NSNull). We should probably bail out.
@@ -277,6 +275,7 @@ static void removeBundleFromMIList(NSString *bundle) {
 		else {
 			//Add the package to the Uninstall operation queue.
 			[uninstallQueue addOperation:[[CDUninstallDpkgOperation alloc] initWithPackage:package]];
+			removeBundleFromMIList([application bundleIdentifier]);
 		}
 	}
 }
@@ -288,11 +287,17 @@ static void removeBundleFromMIList(NSString *bundle) {
 @end
 
 static void uninstallClickedForIcon(SBIcon *self) {
-
 	//Get the application for this icon.
 	SBApplication *app = [self application];
+	
 	//Get the bundle identifer for this application.
-	NSString *bundle = [app bundleIdentifier];
+	NSString *bundle = nil;
+	if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_8_0) {
+		bundle = [app bundleIdentifier];
+	}
+	else {
+		bundle = [app displayIdentifer];
+	}
 
 	//If iconPackagesDict does not contain this current application's bundle ID.
 	if(![[iconPackagesDict allKeys] containsObject:bundle]) {
@@ -305,6 +310,7 @@ static void uninstallClickedForIcon(SBIcon *self) {
 
 %hook SBIconController
 	- (void)iconCloseBoxTapped:(id)_i {
+		%log;
 		SBIconView *iconView = _i;
 		SBIcon *icon = [iconView icon];
 		SBApplication *app = [icon application];
@@ -321,7 +327,13 @@ static void uninstallClickedForIcon(SBIcon *self) {
 	%new(c@:)
 	-(BOOL)cydelete_allowsUninstall {
 		//Get the bundle ID for this application.
-		NSString *bundle = [[self application] bundleIdentifier];
+		NSString *bundle = nil;
+		if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_8_0) {
+			bundle = [[self application] bundleIdentifier];
+		}
+		else {
+			bundle = [[self application] displayIdentifer];
+		}
 		//If the application is an Apple application.
 		bool isApple = ([bundle hasPrefix:@"com.apple."] && ![bundle hasPrefix:@"com.apple.samplecode."]);
 		//If the application is Cydia and user has protected it.
@@ -373,7 +385,18 @@ static void uninstallClickedForIcon(SBIcon *self) {
 	}
 
 	-(NSString *)uninstallAlertBody {
-		id package = [iconPackagesDict objectForKey:[[self application] bundleIdentifier]];	
+
+		NSString *bundle = nil;
+
+		if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_8_0) {
+			bundle = [[self application] bundleIdentifier];
+		}
+		else {
+			bundle = [[self application] displayIdentifer];
+		}
+
+		id package = [iconPackagesDict objectForKey:bundle];	
+
 		NSString *body;
 		if(package == [NSNull null]) {
 			body = [NSString stringWithFormat:SBLocalizedString(@"DELETE_WIDGET_BODY"),
