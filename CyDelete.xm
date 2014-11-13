@@ -1,6 +1,6 @@
 //
-//  CyDelete7.xm
-//  CyDelete7
+//  CyDelete8.xm
+//  CyDelete8
 //
 //  Created by Ryan Burke on 02.01.2014.
 //  Copyright (c) 2014 Ryan Burke. All rights reserved.
@@ -48,18 +48,18 @@ static NSOperationQueue *uninstallQueue;
 
 //Loads the application translation bundle and stores it locally. 
 static void initTranslation() {
-    cyDelBundle = [NSBundle bundleWithPath:@"/Library/Application Support/CyDelete8/CyDelete8.bundle"];
+    cyDelBundle = [NSBundle bundleWithPath:@"/Library/Application Support/CyDelete/CyDelete.bundle"];
 }
 
 static bool getCFBool(CFStringRef key, bool defaultValue) {
 	//Sync the latest version of the preferences.
-	bool synced = CFPreferencesAppSynchronize(CFSTR("com.ryanburke.cydelete8"));
+	bool synced = CFPreferencesAppSynchronize(CFSTR("com.ryanburke.cydelete"));
 	//If the sync failed, lets just default to protecting Cydia for safety.
 	if(!synced) return defaultValue;
 	//Create a boolean object to hold the success value from next function.
 	Boolean success;
 	//Get the value of the key from the preferences.
-	bool result = CFPreferencesGetAppBooleanValue(key, CFSTR("com.ryanburke.cydelete8"), &success);
+	bool result = CFPreferencesGetAppBooleanValue(key, CFSTR("com.ryanburke.cydelete"), &success);
 	//If the enabled key existed and we got the value okay.
 	if(success) {
 		//Return the value of the key.

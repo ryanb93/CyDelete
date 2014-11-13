@@ -1,4 +1,4 @@
-Package: com.ryanburke.cydelete8
+Package: com.ryanburke.cydelete
 Name: CyDelete8
 Depends: firmware (>=7.0), mobilesubstrate, preferenceloader, apt, bash
 Version: 1.0

@@ -1,6 +1,5 @@
 //
-//  cydelete7settings.m
-//  cydelete7settings
+//  CyDeleteListController.mm
 //
 //  Created by Ryan Burke on 03.01.2014.
 //  Copyright (c) 2014 Ryan Burke. All rights reserved.
@@ -9,7 +8,7 @@
 #include <Preferences/PSSpecifier.h>
 #include <Preferences/PSListController.h>
 
-@interface Cydelete8ListController : PSListController
+@interface CyDeleteListController : PSListController
 
 - (id)specifiers;
 - (void)ryanDonate:(id)arg;
@@ -17,11 +16,11 @@
 
 @end
 
-@implementation Cydelete8ListController
+@implementation CyDeleteListController
 
 - (id)specifiers {
 	if (_specifiers == nil) {
-		_specifiers = [[self loadSpecifiersFromPlistName:@"Cydelete8" target:self] retain];
+		_specifiers = [[self loadSpecifiersFromPlistName:@"CyDelete" target:self] retain];
         [self localizedSpecifiersWithSpecifiers:_specifiers];
 	}
 	return _specifiers;
@@ -60,7 +59,7 @@
 }
 
 - (void)viewSource:(id)arg {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/ryanb93/CyDelete7"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/ryanb93/CyDelete"]];
 }
 
 

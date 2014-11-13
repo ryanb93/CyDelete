@@ -5,9 +5,9 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>Cydelete8</string>
+	<string>CyDelete.dylib</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.ryanburke.cydelete8</string>
+	<string>com.ryanburke.cydelete</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundlePackageType</key>
@@ -21,8 +21,6 @@
 	<key>DTPlatformName</key>
 	<string>iphoneos</string>
 	<key>MinimumOSVersion</key>
-	<string>8.0</string>
-	<key>NSPrincipalClass</key>
-	<string>Cydelete8ListController</string>
+	<string>7.0</string>
 </dict>
 </plist>

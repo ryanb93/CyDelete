@@ -16,7 +16,7 @@
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
-			<string>com.ryanburke.cydelete8</string>
+			<string>com.ryanburke.cydelete</string>
 			<key>key</key>
 			<string>enabled</string>
 			<key>label</key>
@@ -38,7 +38,7 @@
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
-			<string>com.ryanburke.cydelete8</string>
+			<string>com.ryanburke.cydelete</string>
 			<key>key</key>
 			<string>CDProtectCydia</string>
 			<key>label</key>
@@ -52,7 +52,7 @@
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
-			<string>com.ryanburke.cydelete8</string>
+			<string>com.ryanburke.cydelete</string>
 			<key>key</key>
 			<string>CDProtectPangu</string>
 			<key>label</key>
