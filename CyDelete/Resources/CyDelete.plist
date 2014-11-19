@@ -8,7 +8,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>label</key>
-			<string>Settings</string>
+			<string>SETTINGS_TITLE</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -20,7 +20,7 @@
 			<key>key</key>
 			<string>enabled</string>
 			<key>label</key>
-			<string>Enabled</string>
+			<string>ENABLED</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -64,13 +64,7 @@
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
-			<string>
-There is no DRM protection on this application but please help support future development (my coffee fund) by donating via PayPal.
-
-CyDelete8 © 2014 Ryan Burke
-CyDelete © 2009-2011 Dustin L. Howett
-Released under the GPLv3 Licence.
-			</string>
+			<string>NO_DRM_DONATE_COPYRIGHT</string>
 		</dict>
 		<dict>
 			<key>action</key>
@@ -86,7 +80,7 @@ Released under the GPLv3 Licence.
 			<key>cell</key>
 			<string>PSButtonCell</string>
 			<key>label</key>
-			<string>Source Code</string>
+			<string>SOURCE_CODE</string>
 		</dict>
 	</array>
 	<key>title</key>

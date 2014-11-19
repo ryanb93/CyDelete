@@ -12,5 +12,18 @@
 	<string>Aplicações protegidas</string>
 	<key>PROTECTED_WARNING</key>
 	<string>Eliminar todas estas aplicações vai deixá-lo sem Interface Gráfico para instalar pacotes, NÃO é recomendado.</string>
+	<key>ENABLED</key>
+	<string>Activado</string>
+	<key>SETTINGS_TITLE</key>
+	<string>Definições</string>
+	<key>NO_DRM_DONATE_COPYRIGHT</key>
+	<string>
+Não há protecção DRM nesta aplicação, por favor apoie o desenvolvimento futuro (o meu fundo para café) ao doar via PayPal.
+
+CyDelete8 © 2014 Ryan Burke
+CyDelete © 2009-2011 Dustin L. Howett
+Disponibilizado sob licença GPLv3.</string>
+	<key>SOURCE_CODE</key>
+	<string>Código fonte</string>
 </dict>
 </plist>
