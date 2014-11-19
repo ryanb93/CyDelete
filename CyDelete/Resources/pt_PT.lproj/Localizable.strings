@@ -5,12 +5,12 @@
 	<key>DONATE</key>
 	<string>Doar via PayPal</string>
 	<key>NON_CYDIA_DEL</key>
-	<string>EliminaÁ„o n„o-Cydia</string>
+	<string>Elimina√ß√£o n√£o Cydia</string>
 	<key>NON_CYDIA_DEL_TEXT</key>
-	<string>Permite ao CyDelete eliminar AplicaÁıes que n„o foram instaladas com o Cydia. Isto pode ser perigoso, as aplicaÁıes desinstaladas deste modo sÛ poder„o ser reinstaladas manualmente.</string>
+	<string>Permite ao CyDelete eliminar Aplica√ß√µes que n√£o foram instaladas com o Cydia. Isto pode ser perigoso, as aplica√ß√µes desinstaladas deste modo s√≥ poder√£o ser reinstaladas manualmente.</string>
 	<key>PROTECTED_TITLE</key>
-	<string>AplicaÁıes protegidas</string>
+	<string>Aplica√ß√µes protegidas</string>
 	<key>PROTECTED_WARNING</key>
-	<string>Eliminar todas estas aplicaÁıes vai deix·-lo sem Interface Gr·fico para instalar pacotes, N√O È recomendado.</string>
+	<string>Eliminar todas estas aplica√ß√µes vai deix√°-lo sem Interface Gr√°fico para instalar pacotes, N√ÉO √© recomendado.</string>
 </dict>
 </plist>
