@@ -5,7 +5,7 @@
 	<key>NOT_ENOUGH_MEMORY</key>
 	<string>Não tem memória suficiente</string>
 	<key>PACKAGE_DELETE_BODY</key>
-	<string>Apagar “%@” irá desinstalar “%@” ae todas as suas dependências.</string>
+	<string>Apagar “%@” irá desinstalar “%@” e todas as suas dependências.</string>
 	<key>PACKAGE_FINISH_BODY</key>
 	<string>Para concluir a desinstalação de “%@”, tem que %@.</string>
 	<key>PACKAGE_FINISH_OKAY</key>
