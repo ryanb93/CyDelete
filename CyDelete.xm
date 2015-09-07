@@ -242,7 +242,7 @@ static id ownerForSBApplication(SBApplication *application) {
 
 	-(void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
 	    if (alertView.tag == 100) {
-	    	outputForShellCommand(@"killall -9 SpringBoard");
+	    	[(SpringBoard *)[UIApplication sharedApplication] _relaunchSpringBoardNow];
 	    }
 	}
 
