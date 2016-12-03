@@ -1,5 +1,5 @@
 ARCHS = armv7 arm64
-TARGET = iphone:8.1
+TARGET = iphone
 
 include theos/makefiles/common.mk
 
@@ -12,4 +12,4 @@ SUBPROJECTS += setuid CyDelete
 include $(THEOS_MAKE_PATH)/aggregate.mk
 
 after-install::
-	install.exec "killall -9 SpringBoard"
+	install.exec "killall backboardd"

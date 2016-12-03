@@ -11,7 +11,7 @@
 @interface CyDeleteListController : PSListController
 
 - (id)specifiers;
-- (void)ryanDonate:(id)arg;
+- (void)donate:(id)arg;
 - (void)viewSource:(id)arg;
 
 @end
@@ -28,6 +28,10 @@
 
 - (id)navigationTitle {
 	return [[self bundle] localizedStringForKey:[super title] value:[super title] table:nil];
+}
+
+- (id)localized:(NSString *)key{
+    return [[self bundle] localizedStringForKey:key value:key table:nil];
 }
 
 - (id)localizedSpecifiersWithSpecifiers:(NSArray *)specifiers {
@@ -54,8 +58,8 @@
 	return specifiers;
 }
 
-- (void)ryanDonate:(id)arg {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4VBFWEFBUF56N"]];
+- (void)donate:(id)arg {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4VBFWEFBUF56N"]];  
 }
 
 - (void)viewSource:(id)arg {

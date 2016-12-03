@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>DONATE</key>
-	<string>Doar via PayPal</string>
+	<string>Doar</string>
 	<key>NON_CYDIA_DEL</key>
 	<string>Eliminação não Cydia</string>
 	<key>NON_CYDIA_DEL_TEXT</key>
@@ -18,8 +18,9 @@
 	<string>Definições</string>
 	<key>NO_DRM_DONATE_COPYRIGHT</key>
 	<string>
-Não há protecção DRM nesta aplicação, por favor apoie o desenvolvimento futuro (o meu fundo para café) ao doar via PayPal.
+Não há protecção DRM nesta aplicação, por favor apoie o desenvolvimento futuro (o meu fundo para café) ao doar.
 
+CyDelete9 © 2016 Pal Lockhart
 CyDelete8 © 2014 Ryan Burke
 CyDelete © 2009-2011 Dustin L. Howett
 Disponibilizado sob licença GPLv3.</string>
