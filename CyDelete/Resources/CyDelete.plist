@@ -76,6 +76,14 @@
 		</dict>
 		<dict>
 			<key>action</key>
+			<string>donate2:</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>DONATE</string>
+		</dict>
+		<dict>
+			<key>action</key>
 			<string>viewSource:</string>
 			<key>cell</key>
 			<string>PSButtonCell</string>

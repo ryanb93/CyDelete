@@ -391,31 +391,18 @@ static BOOL _forceCydia;
 		}
 		if(cydelete_IOSVersionAbove92() && [[iconPackagesDict allKeys] containsObject:[app bundleIdentifier]]) {
 			//new mechanism: iOS 9.2 above will not automatically trigger uninstall, we've to call it manually
-			BOOL contains = NO;
-			for(CDUninstallDpkgOperation *operation in [uninstallQueue operations]){
-				if([operation.package isEqualToString:[app bundleIdentifier]]){
-					contains = YES;
-					break;
-				}
-			}
-			if(contains) {
-				UIAlertController* alert=[UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@ IS uninstalling",[app displayName]] message:@"Please WAIT A SEC" preferredStyle:UIAlertControllerStyleAlert];  
-				[alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil]]; 
-				[self presentViewController: alert animated:YES completion:nil];  
-			}else{
-				appicon.forceCydia = YES;
-				UIAlertController* alert=[UIAlertController alertControllerWithTitle:[appicon uninstallAlertTitle] message:[appicon uninstallAlertBody] preferredStyle:UIAlertControllerStyleAlert];  
-				[alert addAction:[UIAlertAction actionWithTitle:[appicon uninstallAlertCancelTitle] style:UIAlertActionStyleDefault handler:nil]]; 
-				[alert addAction:[UIAlertAction actionWithTitle:[appicon uninstallAlertConfirmTitle] style:UIAlertActionStyleCancel handler:^(UIAlertAction* _Nonnull action)  
-				{
-				    Class $LSApplicationWorkspace = objc_getClass("LSApplicationWorkspace");
-				    [[$LSApplicationWorkspace defaultWorkspace] unregisterApplication:[NSURL fileURLWithPath:[app path]]];
-				    Class $SBApplicationController = objc_getClass("SBApplicationController");
-				    [[$SBApplicationController sharedInstance] uninstallApplication:app];
-				}]];  
-				appicon.forceCydia = NO;
-				[self presentViewController: alert animated:YES completion:nil];  
-			}
+			appicon.forceCydia = YES;
+			UIAlertController* alert=[UIAlertController alertControllerWithTitle:[appicon uninstallAlertTitle] message:[appicon uninstallAlertBody] preferredStyle:UIAlertControllerStyleAlert];  
+			[alert addAction:[UIAlertAction actionWithTitle:[appicon uninstallAlertCancelTitle] style:UIAlertActionStyleDefault handler:nil]]; 
+			[alert addAction:[UIAlertAction actionWithTitle:[appicon uninstallAlertConfirmTitle] style:UIAlertActionStyleCancel handler:^(UIAlertAction* _Nonnull action)  
+			{
+				Class $LSApplicationWorkspace = objc_getClass("LSApplicationWorkspace");
+				[[$LSApplicationWorkspace defaultWorkspace] unregisterApplication:[NSURL fileURLWithPath:[app path]]];
+				Class $SBApplicationController = objc_getClass("SBApplicationController");
+				[[$SBApplicationController sharedInstance] uninstallApplication:app];
+			}]];  
+			appicon.forceCydia = NO;
+			[self presentViewController: alert animated:YES completion:nil];  
 		}else{
 			%orig;
 		}
@@ -463,7 +450,6 @@ static BOOL _forceCydia;
 	}
 
 	-(NSString *)uninstallAlertTitle {
-		%log;
 		if(!_forceCydia && isOfficialUninstallable([self application]))
 			return %orig;
 		return [NSString stringWithFormat:cydelete_IOSVersionAbove92() ? SBLocalizedString(@"UNINSTALL_ICON_TITLE_DELETE_WITH_NAME") : SBLocalizedString(@"UNINSTALL_ICON_TITLE"),
@@ -499,14 +485,12 @@ static BOOL _forceCydia;
 	}
 
 	-(NSString *)uninstallAlertConfirmTitle {
-		%log;
 		if(!_forceCydia && isOfficialUninstallable([self application]))
 			return %orig;
 		return cydelete_IOSVersionAbove92() ? SBLocalizedString(@"UNINSTALL_ICON_BUTTON_DELETE") : SBLocalizedString(@"UNINSTALL_ICON_CONFIRM");
 	}
 
 	-(NSString *)uninstallAlertCancelTitle {
-		%log;
 		if(!_forceCydia && isOfficialUninstallable([self application]))
 			return %orig;
 		return cydelete_IOSVersionAbove92() ? SBLocalizedString(@"UNINSTALL_ICON_BUTTON_CANCEL") : SBLocalizedString(@"UNINSTALL_ICON_CANCEL");
