@@ -68,7 +68,15 @@
 		</dict>
 		<dict>
 			<key>action</key>
-			<string>ryanDonate:</string>
+			<string>donate:</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>label</key>
+			<string>DONATE</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>donate2:</string>
 			<key>cell</key>
 			<string>PSButtonCell</string>
 			<key>label</key>
@@ -84,6 +92,6 @@
 		</dict>
 	</array>
 	<key>title</key>
-	<string>CyDelete8</string>
+	<string>CyDelete9</string>
 </dict>
 </plist>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>DONATE</key>
-	<string>通过PayPal捐助</string>
+	<string>捐助</string>
 	<key>NON_CYDIA_DEL</key>
 	<string>非Cydia卸载</string>
 	<key>NON_CYDIA_DEL_TEXT</key>
@@ -12,5 +12,27 @@
 	<string>受保护的程序</string>
 	<key>PROTECTED_WARNING</key>
 	<string>卸载这两个应用程序将会导致安装软件包时无图形界面，因此不推荐这样做。</string>
+	<key>ENABLED</key>
+	<string>启用</string>
+	<key>SETTINGS_TITLE</key>
+	<string>设置</string>
+	<key>NO_DRM_DONATE_COPYRIGHT</key>
+	<string>
+本程序未做版权保护，若希望作者有动力继续更新，还请捐杯咖啡钱。
+
+CyDelete9 © 2016 路痴
+CyDelete8 © 2014 Ryan Burke
+CyDelete © 2009-2011 Dustin L. Howett
+在GPLv3协议下发布.</string>
+	<key>SOURCE_CODE</key>
+	<string>源代码</string>
+	<key>PAYPAL</key>
+	<string>贝宝</string>
+	<key>BITCOIN</key>
+	<string>比特币</string>
+	<key>ALIPAY</key>
+	<string>支付宝</string>
+	<key>CANCEL</key>
+	<string>取消</string>
 </dict>
 </plist>

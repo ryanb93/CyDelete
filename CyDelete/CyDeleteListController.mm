@@ -11,7 +11,7 @@
 @interface CyDeleteListController : PSListController
 
 - (id)specifiers;
-- (void)ryanDonate:(id)arg;
+- (void)donate:(id)arg;
 - (void)viewSource:(id)arg;
 
 @end
@@ -28,6 +28,10 @@
 
 - (id)navigationTitle {
 	return [[self bundle] localizedStringForKey:[super title] value:[super title] table:nil];
+}
+
+- (id)localized:(NSString *)key{
+    return [[self bundle] localizedStringForKey:key value:key table:nil];
 }
 
 - (id)localizedSpecifiersWithSpecifiers:(NSArray *)specifiers {
@@ -54,8 +58,37 @@
 	return specifiers;
 }
 
-- (void)ryanDonate:(id)arg {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4VBFWEFBUF56N"]];
+- (void)donate:(id)arg {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4VBFWEFBUF56N"]];  
+}
+
+- (void)donate2:(id)arg {
+    UIAlertController* alert=[UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"%@ palxex",[self localized:@"DONATE"]] message:nil preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:[self localized:@"BITCOIN"] style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action)
+        {
+            NSURL *targetURL = [NSURL URLWithString:@"bitcoin:1EXrR9YSEEXtFSYWjNnwrhyRhc4DoQHhzC"];
+            if([[UIApplication sharedApplication] canOpenURL:targetURL])
+                [[UIApplication sharedApplication] openURL:targetURL];
+            else{
+                [[UIPasteboard generalPasteboard] setString:@"1EXrR9YSEEXtFSYWjNnwrhyRhc4DoQHhzC"];
+                UIAlertController* alert=[UIAlertController alertControllerWithTitle:@"" message:@"BTC address 1EXrR9YSEEXtFSYWjNnwrhyRhc4DoQHhzC; have been copied in your pasteboard" preferredStyle:UIAlertControllerStyleAlert];
+                [alert addAction:[UIAlertAction actionWithTitle:@"OKay" style:UIAlertActionStyleCancel handler:nil]];
+                [self presentViewController: alert animated:YES completion:nil];
+            }
+        }]];
+    [alert addAction:[UIAlertAction actionWithTitle:[self localized:@"ALIPAY"] style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action)
+        {
+            NSURL *targetURL = [NSURL URLWithString:@"alipayqr://platformapi/startapp?saId=10000007&qrcode=https%3A%2F%2Fqr.alipay.com%2Faex04760kwfblpiaho9mg00"];
+            if([[UIApplication sharedApplication] canOpenURL:targetURL])
+                [[UIApplication sharedApplication] openURL:targetURL];
+            else
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://qr.alipay.com/aex04760kwfblpiaho9mg00"]];
+        }]];
+    [alert addAction:[UIAlertAction actionWithTitle:[self localized:@"PAYPAL"] style:UIAlertActionStyleDefault handler:^(UIAlertAction* _Nonnull action)
+        {[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=W25D7EKNG9JNQ&lc=C2&item_name=Donation&button_subtype=services"]];
+        }]];
+    [alert addAction:[UIAlertAction actionWithTitle:[self localized:@"CANCEL"] style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController: alert animated:YES completion:nil];
 }
 
 - (void)viewSource:(id)arg {

@@ -1,0 +1,6 @@
+#!/bin/bash
+if [[ -e /usr/libexec/cydelete/setuid ]]; then
+    chmod 4755 /usr/libexec/cydelete/setuid
+    chown root:wheel /usr/libexec/cydelete/setuid
+fi
+exit 0

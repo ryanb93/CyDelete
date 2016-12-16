@@ -1,13 +1,13 @@
 Package: com.ryanburke.cydelete
-Name: CyDelete8
-Depends: firmware (>=7.0), mobilesubstrate, preferenceloader, apt, bash
+Name: CyDelete9
+Depends: firmware (>=9.0), mobilesubstrate, preferenceloader, apt, bash
 Conflicts: net.howett.cydelete, com.sosiphone.cydeletefr
-Version: 1.0.2
+Version: 1.1.0
 Architecture: iphoneos-arm
-Description: Allows you to uninstall applications installed via Cydia from the Springboard just like AppStore applications. Just hold an icon down and tap on the X and the app will be uninstalled! This application is a new branch of the original CyDelete, created by @DHowett, bringing new support for iOS 8. Supports iOS 7 and 8.
-Maintainer: Ryan Burke <ryan_burke@outlook.com>
-Author: Ryan Burke <ryan_burke@outlook.com>
+Description: Allows you to uninstall applications installed via Cydia from the Springboard just like AppStore applications. Just hold an icon down and tap on the X and the app will be uninstalled! This application is a new branch of the original CyDelete which created by @DHowett and ported to iOS8 by Ryan Burke, bringing new support for iOS 9.3. Supports iOS 7/8/9.
+Maintainer: Pal Lockheart <ex@palx.org>
+Author: Pal Lockheart <ex@palx.org>
 Section: Tweaks
 Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=cydelete7Dp
-dev: ryanb93
+dev: palxex
 Tag: purpose::extension, role::enduser
