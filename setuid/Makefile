@@ -4,8 +4,8 @@ setuid_PACKAGE_TARGET_DIR = /usr/libexec/cydelete
 
 ARCHS = armv7 arm64
 
-include ../theos/makefiles/common.mk
-include ../theos/makefiles/tool.mk
+include $THEOS/makefiles/common.mk
+include $THEOS/makefiles/tool.mk
 
 after-setuid-stage::
 	sudo chmod 4755 $(FW_STAGING_DIR)/usr/libexec/cydelete/setuid

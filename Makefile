@@ -1,7 +1,7 @@
 ARCHS = armv7 arm64
-TARGET = iphone:8.1
+TARGET = iphone:10.2
 
-include theos/makefiles/common.mk
+include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = CyDelete
 CyDelete_FILES = CyDelete.xm
